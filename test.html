@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+        <title>Adrienne Ho的潮流穿搭经</title>
+        <style>
+            html {
+                height:100%;
+            }
+        body {
+            background-color: #FFFFFF;
+            margin:0;
+            height:100%;
+        }
+        @font-face {
+            font-family: 'LoadingFont';
+            src: url('loading/font.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        </style>
+        <!-- copy these lines to your document head: -->
+        
+        <meta name="viewport" content="user-scalable=no, width=320" />
+        <link rel="stylesheet" type="text/css" href="swiper.min.css" />
+        <style>
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: transparent;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+        .swiper-button-next,.swiper-button-prev{
+            transform: scale(1.2,1.6);
+            -webkit-transform: scale(1.2,1.6);
+        }
+        .swiper-button-next{
+            right: 20px;
+        }
+        .swiper-button-prev{
+            left: 20px;
+        }
+        </style>
+        
+        <script type="text/javascript" src="https://feature.yoho.cn/0929/ADRIANNE/jquery-1.10.2.min.js"></script>
+        <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <script src="swiper.min.js"></script>
+        
+        <script>
+            //imgArr用于存储图片名称,用英文的,号隔开
+            
+            var imgArr = [
+                          '1.jpg',
+                          '1-1.png',
+                          '1-2.png',
+                          '1-3.png',
+                          '1-4.png',
+                          '1-5.png',
+                          '2.jpg',
+                          '2-1.jpg',
+                          '2-2.png',
+                          '2-3.png',
+                          '2-4.png',
+                          '2-5.png',
+                          '2-6.png',
+                          '4.jpg',
+                          '4-1.jpg',
+                          '4-2.png',
+                          '4-3.png',
+                          '4-4.png',
+                          '4-5.png',
+                          '5.jpg',
+                          '5-1.jpg',
+                          '5-3.png',
+                          '5-4.png',
+                          '5-5.png',
+                          '6.jpg',
+                          '6-1.jpg',
+                          '6-2.png',
+                          '6-3.png',
+                          '6-4.png',
+                          '6-5.png',
+                          '7.jpg',
+                          '7-1.jpg',
+                          '7-2.png',
+                          '7-3.png',
+                          '7-4.png',
+                          '7-5.png',
+                          '8.jpg',
+                          '8-1.jpg',
+                          '8-2.png',
+                          '8-3.png',
+                          '8-4.png',
+                          '8-5.png',
+                          '9.jpg',
+                          '9-1.jpg',
+                          '9-2.png',
+                          '9-3.png',
+                          '9-4.png',
+                          '9-5.png',
+                          '10.jpg',
+                          '10-1.jpg',
+                          '10-2.png',
+                          '10-3.png',
+                          '10-4.png',
+                          '10-5.png',
+                          '11.jpg',
+                          '11-1.jpg',
+                          '11-2.png',
+                          '11-3.png',
+                          '11-4.png',
+                          '11-5.png',
+                          '12.jpg',
+                          '12-1.png',
+                          '12-2.png',
+                          
+                          
+                          
+                          
+                          ];
+                          var folder = 'https://feature.yoho.cn/0929/ADRIANNE/0929adho3.hyperesources/';//放图片的目录名称
+                          var total = imgArr.length;
+                          $(document).ready(function() {
+                                            var html = '<img src="' + folder + imgArr[0] + '" onload="loadProgress(0)">';
+                                            $('.preloadPan').append(html);
+                                            });
+                                            
+                                            function loadProgress(index) {
+                                                if (index < total - 1) {
+                                                    index += 1;
+                                                    var html = '<img src="' + folder + imgArr[index] + '" onload="loadProgress(' + index + ')">';
+                                                    console.log(html);
+                                                    var percent = Math.round((index + 1) / total * 100);
+                                                    var loadIndex = 0;
+                                                    if(percent > 10) {
+                                                        loadIndex = 1;
+                                                    }
+                                                    if(percent > 25) {
+                                                        loadIndex = 2;
+                                                    }
+                                                    if(percent > 40) {
+                                                        loadIndex = 3;
+                                                    }
+                                                    if(percent > 55) {
+                                                        loadIndex = 4;
+                                                    }
+                                                    if(percent > 70) {
+                                                        loadIndex = 5;
+                                                    }
+                                                    if(percent > 80) {
+                                                        loadIndex = 6;
+                                                    }
+                                                    if(percent > 90) {
+                                                        loadIndex = 7;
+                                                    }
+                                                    
+                                                    $('.loadImg').css('background-image','url("http://feature.yoho.cn/0929/ADRIANNE/loading/' + loadIndex + '.png)');
+                                                    
+                                                    $('.loadText').text('' + percent + '%');
+                                                    $('.preloadPan').append(html);
+                                                    
+                                                }
+                                                else {
+                                                    console.log('complete');
+                                                    $('.loadingPan').hide();
+                                                    var sc = document.createElement('script');
+                                                    sc.type = 'text/javascript';
+                                                    sc.charset = 'utf-8';
+                                                    sc.src = folder + '0929adho3_hype_generated_script.js?88571';//加载的js名称
+                                                    
+                                                    console.log(sc);
+                                                    $('#0929adho3_hype_container').append(sc);
+                                                }
+                                                
+                                            }
+        </script>
+        
+        
+        <!-- end copy -->
+    </head>
+    <body class="keBody">
+        <input id="shareLink" type="hidden" value="http://feature.yoho.cn/0929/ADRIANNE/index.html">
+            <input id="shareDesc" type="hidden" value="YOHO!team飞往NEW YORK,与女神Adrianne Ho共同打造本季最in潮流穿搭指南！">
+                <input id="shareImg" type="hidden" value="http://feature.yoho.cn/SHAREIMG/0929adho3.png">
+                    <input id="shareTitle" type="hidden" value="潮流女神Adrianne Ho演绎男装女穿，给你女朋友的造型参考，给cp们的型格典范。">
+                        <script type="text/javascript" charset="utf-8" src="wx-share.js"></script>
+                        <!-- copy these lines to your document: -->
+                        
+                        <div id="0929adho3_hype_container" style="margin:auto;position:relative;width:100%;height:100%;overflow:hidden;" aria-live="polite">
+                            
+                            <div class="preloadPan" style="display: none">
+                                <img src="http://feature.yoho.cn/0929/ADRIANNE/loading/0.png">
+                                    <img src="http://feature.yoho.cn/0929/ADRIANNE/loading/1.jpg">
+                                        <img src="http://feature.yoho.cn/0929/ADRIANNE/loading/2.png">
+                                            <img src="http://feature.yoho.cn/0929/ADRIANNE/loading/3.png">
+                                                <img src="http://feature.yoho.cn/0929/ADRIANNE/loading/4.png">
+                                                    <img src="http://feature.yoho.cn/0929/ADRIANNE/loading/5.png">
+                                                        <img src="lhttp://feature.yoho.cn/0929/ADRIANNE/oading/6.png">
+                                                            <img src="http://feature.yoho.cn/0929/ADRIANNE/loading/7.png">
+                                                                
+                                                                </div>
+                            <div class="loadingPan" style="position:absolute;width:100%;height:70px;top: 38%">
+                                
+                                <div class="loadImg" style="width: 123px;height: 30px;margin:0 auto;padding:0;background-image: url(http://feature.yoho.cn/0929/ADRIANNE/loading/0.png);background-size: 100% 100%;background-repeat: no-repeat">
+                                    
+                                </div>
+                                <div style="width: 100%;height: 14px;margin:-15px auto;text-align: center;padding: 0;line-height: 18px">
+                                    <p class="loadText" style="color:#2f2f2f;font-family: LoadingFont;font-size: 14px"> 0%</p>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- end copy -->
+                        
+                        
+                        
+                        <!-- text content for search engines: -->
+                        
+                        <div style="display:none">
+                            
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div> </div>
+                            <div> </div>
+                            <div> </div>
+                            <div> </div>
+                            <div> </div>
+                            <div> </div>
+                            <div> </div>
+                            <div></div>
+                            <div> </div>
+                            <div> </div>
+                            
+                        </div>
+                        
+                        <!-- end text content: -->
+                        
+                        </body>
+</html>
